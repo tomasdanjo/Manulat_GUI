@@ -15,9 +15,14 @@ public class Leap_Year_Checker extends JFrame {
         btnCheckYear.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                long year = Long.parseLong(tfYear.getText());
-                if(isLeap(year))JOptionPane.showMessageDialog(null,"Leap Year");
-                else JOptionPane.showMessageDialog(null, "Not a leap year");
+                try{
+                    long year = Long.parseLong(tfYear.getText());
+                    if(isLeap(year))JOptionPane.showMessageDialog(null,"Leap Year");
+                    else JOptionPane.showMessageDialog(null, "Not a leap year");
+                }catch(NumberFormatException n){
+                    JOptionPane.showMessageDialog(null, "Invalid Input");
+                }
+
             }
         });
     }

@@ -16,24 +16,29 @@ public class SimpleCalculator extends JFrame {
         computeResultButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                float num1 = Float.parseFloat(tfNumber1.getText());
-                float num2 = Float.parseFloat(tfNumber2.getText());
-                String op = (String)cbOperations.getSelectedItem();
+                try{
+                    float num1 = Float.parseFloat(tfNumber1.getText());
+                    float num2 = Float.parseFloat(tfNumber2.getText());
+                    String op = (String)cbOperations.getSelectedItem();
 
-                switch(op){
-                    case "+":
-                        lblResult.setText(String.format("%.2f",num1+num2));
-                        break;
-                    case "-":
-                        lblResult.setText(String.format("%.2f",num1-num2));
-                        break;
-                    case "*":
-                        lblResult.setText(String.format("%.2f",num1*num2));
-                        break;
-                    case "/":
-                        lblResult.setText(String.format("%.2f",num1/num2));
-                        break;
+                    switch(op){
+                        case "+":
+                            lblResult.setText(String.format("%.2f",num1+num2));
+                            break;
+                        case "-":
+                            lblResult.setText(String.format("%.2f",num1-num2));
+                            break;
+                        case "*":
+                            lblResult.setText(String.format("%.2f",num1*num2));
+                            break;
+                        case "/":
+                            lblResult.setText(String.format("%.2f",num1/num2));
+                            break;
+                    }
+                }catch(NumberFormatException b){
+                    JOptionPane.showMessageDialog(null, "Invalid Input");
                 }
+
             }
 
 
