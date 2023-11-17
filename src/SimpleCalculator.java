@@ -16,22 +16,22 @@ public class SimpleCalculator extends JFrame {
         computeResultButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                int num1 = Integer.parseInt(tfNumber1.getText());
-                int num2 = Integer.parseInt(tfNumber2.getText());
+                float num1 = Float.parseFloat(tfNumber1.getText());
+                float num2 = Float.parseFloat(tfNumber2.getText());
                 String op = (String)cbOperations.getSelectedItem();
 
                 switch(op){
                     case "+":
-                        lblResult.setText(String.format("%d",num1+num2));
+                        lblResult.setText(String.format("%.2f",num1+num2));
                         break;
                     case "-":
-                        lblResult.setText(String.format("%d",num1-num2));
+                        lblResult.setText(String.format("%.2f",num1-num2));
                         break;
                     case "*":
-                        lblResult.setText(String.format("%d",num1*num2));
+                        lblResult.setText(String.format("%.2f",num1*num2));
                         break;
                     case "/":
-                        lblResult.setText(String.format("%.2f",num1/(float)num2));
+                        lblResult.setText(String.format("%.2f",num1/num2));
                         break;
                 }
             }
