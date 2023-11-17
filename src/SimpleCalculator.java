@@ -32,6 +32,7 @@ public class SimpleCalculator extends JFrame {
                             lblResult.setText(String.format("%.2f",num1*num2));
                             break;
                         case "/":
+                            if(num2==0)throw new NumberFormatException();
                             lblResult.setText(String.format("%.2f",num1/num2));
                             break;
                     }
